@@ -11,21 +11,21 @@ import org.kie.server.api.model.ServiceResponse;
 
 @Path("/hello-kieserver")
 public class HelloKieServerResource {
-
+    
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String hello() {
-    
+        
         ServiceResponse<KieContainerResourceList> kieContainers = KieClientInitializer.getKieServicesClient().listContainers();
         StringBuffer containersString = new StringBuffer(); containersString.append("Existing containers: \n");
-    
+        
         for (KieContainerResource kieContainer :
-            kieContainers.getResult().getContainers()) {
+        kieContainers.getResult().getContainers()) {
             containersString.append("\n " + kieContainer.toString());
         }
-    
-    return containersString.toString();
-    
+        
+        return containersString.toString();
+        
     }
     
 }
