@@ -1,12 +1,17 @@
 # kie-client-lab project
 
-This project uses Quarkus, the Supersonic Subatomic Java Framework.
+This is a sample project with Quarkus that shows how you can consume a remote Kie Server via REST API using the Kie Java Client API. For more details check: [https://karinavarela.me/2020/06/29/consuming-business-assets-via-rest/(opens in a new tab)](https://karinavarela.me/?p=1112)
 
-If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
+* This project uses Quarkus, the Supersonic Subatomic Java Framework. If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
+* It is currently using the community version of jBPM, 7.38.0. 
+* *Note:* Due to the issue reported in [JBPM-8937](https://issues.redhat.com/browse/JBPM-8937), in this version of the kie java client used on quarkus, we need to exclude the Jackson dependencies in the pom.xml. This should be adjusted on 7.39.0+
 
 ## Running the application in dev mode
 
-You can run your application in dev mode that enables live coding using:
+* Download jBPM and start it. ( https://www.jbpm.org/ )
+
+* You can run your application in dev mode that enables live coding using:
+
 ```
 ./mvnw quarkus:dev
 ```

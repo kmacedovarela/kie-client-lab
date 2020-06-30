@@ -17,15 +17,14 @@ public class HelloKieServerResource {
     public String hello() {
         
         ServiceResponse<KieContainerResourceList> kieContainers = KieClientInitializer.getKieServicesClient().listContainers();
+        
         StringBuffer containersString = new StringBuffer(); containersString.append("Existing containers: \n");
         
-        for (KieContainerResource kieContainer :
-        kieContainers.getResult().getContainers()) {
+        for (KieContainerResource kieContainer : kieContainers.getResult().getContainers()) {
             containersString.append("\n " + kieContainer.toString());
         }
         
         return containersString.toString();
         
     }
-    
 }
